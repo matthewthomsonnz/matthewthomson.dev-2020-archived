@@ -9,9 +9,8 @@ module.exports = {
       options: {
         apiURL: process.env.URL,
         queryLimit: 1000, // Default to 100
-        contentTypes: [`article`, `user`],
+        contentTypes: [`page`, `user`],
         //If using single types place them in this array.
-        singleTypes: [`page`],
         // Possibility to login with a strapi user, when content types are not publically available (optional).
         loginData: {
           identifier: process.env.USER,
