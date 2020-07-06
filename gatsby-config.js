@@ -3,13 +3,14 @@ require("dotenv").config({
 })
 
 module.exports = {
-  plugins: [
+  plugins: [`gatsby-transformer-sharp`, `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: process.env.URL,
         queryLimit: 1000, // Default to 100
         contentTypes: [`page`, `user`],
+        singleTypes: [`website-settings`],
         //If using single types place them in this array.
         // Possibility to login with a strapi user, when content types are not publically available (optional).
         loginData: {
