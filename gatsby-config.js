@@ -1,16 +1,7 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: process.env.NODE_ENV === "development" ? `.env.development` : `.env`,
 })
-console.log(process.env.NODE_ENV)
-console.log(process.env.NODE_ENV)
-console.log(process.env.NODE_ENV)
-console.log(process.env.NODE_ENV)
-console.log(process.env.NODE_ENV)
-console.log(process.env.NODE_ENV)
-console.log(process.env.NODE_ENV)
-console.log(process.env.NODE_ENV)
-console.log(process.env.NODE_ENV)
-console.log(process.env.NODE_ENV)
+
 
 module.exports = {
   plugins: [
