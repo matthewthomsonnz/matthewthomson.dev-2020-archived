@@ -1,10 +1,6 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
-console.log(process.env.USER)
-console.log(process.env.PASS)
-console.log(process.env.URL)
-console.log("test")
 
 
 module.exports = {
@@ -26,7 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: process.env.URL,
+        apiURL: process.env.STRAPI_URL,
         queryLimit: 1000, // Default to 100
         contentTypes: [`page`, `user`],
         singleTypes: [`website-settings`],
