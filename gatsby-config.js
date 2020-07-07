@@ -3,7 +3,21 @@ require("dotenv").config({
 })
 
 module.exports = {
-  plugins: [`gatsby-transformer-sharp`, `gatsby-plugin-sharp`,
+  plugins: [
+    `gatsby-transformer-sharp`,
+   `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout.js`),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        semicolon: false
+      },
+    },
     {
       resolve: `gatsby-source-strapi`,
       options: {
