@@ -34,5 +34,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Inconsolata:400,700"],
+        },
+      },
+    },
   ]
 }

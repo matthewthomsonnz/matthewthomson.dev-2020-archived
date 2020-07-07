@@ -27,7 +27,7 @@ const nav = useStaticQuery(graphql`
         <>
             <GlobalStyle theme="purple" />
             <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
-            <StyledImg fixed={data.strapiWebsiteSettings.Image.childImageSharp.fluid} />
+                <StyledImg fixed={data.strapiWebsiteSettings.Image.childImageSharp.fluid} />
             {navLinks.map((value, index) => {
 
                 return <Link to={value.node.Path}>{value.node.Title}</Link>
@@ -43,9 +43,10 @@ const styledHeader = styled.header`
     background: red;
 `
 const StyledImg = styled(Img)`
-    width:150px;
-    height:150px;
-    border-radius:999px;
+    background: red;
+    width: 150px;
+
+    height: 150px;
 `;
 
 const GlobalStyle = createGlobalStyle`
@@ -57,9 +58,11 @@ const GlobalStyle = createGlobalStyle`
     .center {justify-content: center; align-items: center}
     .flex {flex: 1}
     html {
+    font-family: "Inconsolata", Monaco, "Courier New", Courier, monospace;
     --spacing-xs: 8px;
     --spacing: 24px;
     --spacing-s: 12px;
     --spacing-m: 36px;
     }
+
 `

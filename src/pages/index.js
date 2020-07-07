@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from 'gatsby' 
 import Layout from "../components/layout"
 import Img from "gatsby-image"
+import styled, { createGlobalStyle, withTheme, css } from 'styled-components'
 
 export default function Home({ data }) {
 
@@ -16,14 +17,14 @@ export default function Home({ data }) {
       {pageData.block.map((value, index) => {
         // console.log(value.Image.childImageSharp.fluid)
       return (
-        <>
-          {value.Image && <Img fixed={value.Image.childImageSharp.fluid} />}
+        <div>
+          {value.Image && <StyledImg fixed={value.Image.childImageSharp.fluid} />}
         <h2>{value.Title}</h2>
           <div dangerouslySetInnerHTML={{ __html: value.Subtitle }} />
 
           <div dangerouslySetInnerHTML={{ __html: value.Content }} />
     
-        </>
+        </div>
       )
 
       })}
@@ -50,7 +51,7 @@ query MyQuery($path: String!) {
           visitLink
           Image {
             childImageSharp {
-              fluid(maxWidth: 150, quality: 100) {
+              fluid(maxWidth: 600, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -74,3 +75,9 @@ query MyQuery($path: String!) {
   }
 }
 `
+
+const StyledImg = styled(Img)`
+
+height: 400px;
+    width: 100%;
+`;
