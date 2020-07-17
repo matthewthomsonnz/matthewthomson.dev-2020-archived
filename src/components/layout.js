@@ -48,7 +48,7 @@ export default withTheme(function Layout({children, data, path }) {
                 <ul>
             {navLinks.map((value, index) => {
               console.log(value.node.Path + "" === path + "")
-              return <li className={value.node.Path === path || value.node.Path.length === 1 && path.length === 1? "active" : ""}><Link to={value.node.Path}>{value.node.Path + "" === path + ""}{value.node.Title}</Link></li>
+              return <li className={value.node.Path === path || index === 0 && path.length === 1? "active" : ""}><Link to={value.node.Path}>{value.node.Path + "" === path + ""}{index}{value.node.Title}</Link></li>
             })}
                 </ul>
             </header>
