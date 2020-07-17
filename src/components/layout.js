@@ -53,7 +53,7 @@ export default withTheme(function Layout({children, data, path }) {
    
               if (value.node.Path === path) test1 = "true"
               return (
-              <li className={value.node.Path === path ? "active" : ""}>
+                <li className={test1 === "true" ? "active" : ""}>
                   <h1>{test1}</h1>
    
                 <Link to={value.node.Path}>{value.node.Path + "" === path + ""}
