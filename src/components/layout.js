@@ -47,7 +47,7 @@ export default withTheme(function Layout({children, data, path }) {
             </Link>
                 <ul>
             {navLinks.map((value, index) => {
-             
+              console.log(value.node.Path, path)
               return <li className={value.node.Path === path ? "active": ""}><Link to={value.node.Path}>{value.node.Title}</Link></li>
             })}
                 </ul>
