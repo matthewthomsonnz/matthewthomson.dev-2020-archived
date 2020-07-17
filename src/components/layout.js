@@ -8,7 +8,7 @@ import VerticalPositioner from './verticalPositioner'
 export default withTheme(function Layout({children, data, path }) {
 
     const pageData = data.allStrapiPage.edges[0].node;
-    console.log(path)
+    console.log("aa"+path+"aa")
     const nav = useStaticQuery(graphql`
             query LayoutQuery {
                 allStrapiPage(sort: {fields: pageOrder}) {
@@ -47,7 +47,10 @@ export default withTheme(function Layout({children, data, path }) {
             </Link>
                 <ul>
             {navLinks.map((value, index) => {
-             
+              console.log("aa" + path + "aa")
+              console.log("bb" + value.node.Path + "bb")
+              console.log("cc" + value.node.Path === path  + "cc")
+              console.log("cc" + value.node.Path == path + "cc")
               return <li className={value.node.Path === path ? "active": ""}><Link to={value.node.Path}>{value.node.Title}</Link></li>
             })}
                 </ul>
