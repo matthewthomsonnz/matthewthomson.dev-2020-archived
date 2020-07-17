@@ -49,11 +49,11 @@ export default withTheme(function Layout({children, data, path }) {
             {navLinks.map((value, index) => {
               var currentNavItemPath=value.node.Path
               var currentPath=path
-              var test1 = "false"
+              var test1
    
-              if (value.node.Path === path) test1 = "true"
+              if (value.node.Path === path) test1 = "active"
               return (
-                <li className={test1 === "true" ? "active" : ""}>
+                <li className={test1}>
                   <h1>{test1}</h1>
    
                 <Link to={value.node.Path}>{value.node.Path + "" === path + ""}
