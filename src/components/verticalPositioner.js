@@ -8,7 +8,6 @@ export default class VerticalPositioner extends React.Component {
             transform: 'translateY(calc(' + 0+ 'px - ' + 0 + 'px))',
             opacity: 0
         }
-
     }
     verticalAlign(prevState){
 
@@ -20,7 +19,7 @@ export default class VerticalPositioner extends React.Component {
     }
     componentDidUpdate(prevProps, prevState) {
         document.documentElement.classList[2] === "wf-active" ? this.verticalAlign(prevState) : setTimeout(() => this.verticalAlign(prevState), 200);
-        
+
     }
     componentDidMount(prevProps, prevState) {
         var scope = this

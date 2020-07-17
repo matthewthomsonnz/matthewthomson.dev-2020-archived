@@ -65,8 +65,8 @@ export default withTheme(function Layout({children, data, path }) {
 })
 
 export const Main = styled.main`
-    padding: 0 15px;
-    margin: 0 -15px;
+    /* padding: 0 15px; */
+    /* margin: 0 -15px; */
     column-gap: 3%;
     column-width: 30%;
 `
@@ -240,12 +240,18 @@ ${Reset}
   line-height: 1rem;
     word-spacing: 1px;
     font-weight: 700;
- 
+
 }
 
+li a:hover,p a:hover,div>a:hover{
+
+   border-bottom: 2px solid #0827e1;
+ 
+}
 p {
   line-height: 1.4rem;
   margin-bottom: 15px;
+      word-break: break-word;
 }
 header {
   margin: 1rem 0;

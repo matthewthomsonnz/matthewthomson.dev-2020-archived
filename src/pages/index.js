@@ -1,4 +1,4 @@
-import React from "react"
+import React , {useEffect} from "react"
 import { graphql, Link } from 'gatsby' 
 import Layout from "../components/layout"
 import Img from "gatsby-image"
@@ -6,9 +6,12 @@ import styled, { createGlobalStyle, withTheme, css } from 'styled-components'
 import { LinkExternal } from "@styled-icons/boxicons-regular"
 
 export default function Home({ data, path }) {
-
+  useEffect(() => {
+    setTimeout(()=>{ if (document.querySelector('input')) document.querySelector('input').select() },500)
+  });
   const pageData = data.allStrapiPage.edges[0].node;
   if (path === "/contact") {
+  
     return (
       <>
         <form name="contact" action="https://formspree.io/matthewthomson.nz@gmail.com" method="POST">
@@ -45,12 +48,14 @@ export default function Home({ data, path }) {
 
           return (
             <FeatureItem >
+              <div>
               {value.Image && <ImgWrapper><StyledImg fluid={value.Image.childImageSharp.fluid} style={{ maxWidth: '100%' }} /></ImgWrapper>}
               <h2>{value.Title}</h2>
               <div dangerouslySetInnerHTML={{ __html: value.Subtitle }} />
               <div dangerouslySetInnerHTML={{ __html: value.Content }} />
               {value && value.skillLevel ? <Range style={{ transform: "scaleX(" + value.skillLevel * 0.1 + ")" }}></Range> : ""}
               {value && value.visitLink ? <a href={value.visitLink} target="_blank">Visit<LinkExternal /> </a> : ""}
+              </div>
             </FeatureItem>
           )
         })}
@@ -116,15 +121,17 @@ overflow: hidden;
 
 `;
 const FeatureItem = styled.div`
-    position: relative;
-        width: 100%;
-  border-radius: 10px;
+       position: relative;
+    width: 100%;
+    margin: 1em 0 0em 0;
+    overflow: visible;
+    display: inline-block;
+  > div {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+
   padding: calc(10px + 3%);
-  margin: 0 0 1em 0;
-  	margin-bottom:1em;
-	/* No cross browser 'break-inside' property being supported yet: */
-	display:inline-block;
+  }
 `
 
 const ImgWrapper = styled.div`
