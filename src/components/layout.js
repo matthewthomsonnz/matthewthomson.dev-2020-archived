@@ -24,7 +24,9 @@ export default withTheme(function Layout({children, data, path }) {
     `)
 
     const navLinks = nav.allStrapiPage.edges;
-        
+    const test = () => {
+      return "active"
+    }
     return (
       <VerticalPositioner>
         <Helmet>
@@ -47,19 +49,17 @@ export default withTheme(function Layout({children, data, path }) {
             </Link>
                 <ul>
             {navLinks.map((value, index) => {
-              var currentNavItemPath=value.node.Path
-              var currentPath=path
-              var test1
-   
-              if (value.node.Path === path) test1 = "active"
               return (
-                <li className={test1}>
-                  <h1>{test1}</h1>
-   
-                <Link to={value.node.Path}>{value.node.Path + "" === path + ""}
-                  {value.node.Title}
+                <>
+                  {test()}
+                  <li className={value.node.Path === path.replace('*', '') ? "active" : "" ? "active" : "" }>
+
+                <Link to={value.node.Path}>
+                      {value.node.Title}
+                  
                 </Link>
-              </li>
+              </li> 
+              </>
                 )
             })}
                 </ul>
