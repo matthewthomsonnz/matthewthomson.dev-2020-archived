@@ -6,10 +6,7 @@ import styled, { createGlobalStyle, withTheme, css } from 'styled-components'
 import VerticalPositioner from './verticalPositioner'
 
 export default withTheme(function Layout({children, data, path }) {
-
-    const pageData = data.allStrapiPage.edges[0].node;
-
-    const nav = useStaticQuery(graphql`
+  const nav = useStaticQuery(graphql`
             query LayoutQuery {
                 allStrapiPage(sort: {fields: pageOrder}) {
                     edges {
@@ -22,6 +19,14 @@ export default withTheme(function Layout({children, data, path }) {
                 }
             }
     `)
+
+  if (!data.allStrapiPage) {
+    return (
+      404
+    )
+  }
+    const pageData = data.allStrapiPage.edges[0].node;
+    
 
     const navLinks = nav.allStrapiPage.edges;
     return (

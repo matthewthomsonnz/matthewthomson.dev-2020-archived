@@ -9,7 +9,14 @@ export default function Home({ data, path }) {
   useEffect(() => {
     setTimeout(()=>{ if (document.querySelector('input')) document.querySelector('input').select() },500)
   });
+
+  if (!data.allStrapiPage) {
+    return(
+      404
+      )
+  }
   const pageData = data.allStrapiPage.edges[0].node;
+  
   if (path === "/contact") {
   
     return (
