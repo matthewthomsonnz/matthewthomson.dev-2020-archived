@@ -151,6 +151,7 @@ const Range = styled.div`
 const FormField = styled.div`
     margin-bottom: 10px;
     display: inline-block;
+    width: 100%;
     input,
     textarea {
         position: relative;

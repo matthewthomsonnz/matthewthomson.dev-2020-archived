@@ -21,6 +21,18 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Matthew Thomson`,
+        short_name: `MT`,
+        start_url: `/`,
+        background_color: `#ebede0`,
+        theme_color: `#0827e1`,
+        display: `standalone`,
+        icon:`src/images/mt.png`
+      },
+    },
+    {
       resolve: `gatsby-source-strapi`,
       options: {
         apiURL: process.env.STRAPI_URL,
@@ -34,14 +46,6 @@ module.exports = {
           password: process.env.PASS,
         },
       },
-    },
-    // {
-    //   resolve: "gatsby-plugin-web-font-loader",
-    //   options: {
-    //     google: {
-    //       families: ["Inconsolata:400,700"],
-    //     },
-    //   },
-    // },
+    }
   ]
 }
