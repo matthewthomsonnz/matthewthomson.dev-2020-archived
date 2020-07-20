@@ -25,11 +25,7 @@ export default function Home({ data, path }) {
           <FormField>
           <label for="name">Name</label>
             <input id="name" name="name" type="text" autocorrect="off" autocomplete="0" required/>
-      
-           
-            
           </FormField>
-          
           <FormField>
             <label for="email">Email</label>
             <input id="email" name="email" type="text" autocorrect="off" autocomplete="0" required />
@@ -122,90 +118,74 @@ query MyQuery($path: String!) {
 `
 
 const StyledImg = styled(Img)`
-display: block;
-overflow: hidden;
+    display: block;
+    overflow: hidden;
     position: initial;
-
 `;
 const FeatureItem = styled.div`
-       position: relative;
+    position: relative;
     width: 100%;
     margin: 1em 0 0em 0;
     overflow: visible;
     display: inline-block;
-  > div {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    border-radius: 10px;
-
-  padding: calc(10px + 3%);
-  }
+    > div {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        border-radius: 10px;
+        padding: calc(10px + 3%);
+    }
 `
 
 const ImgWrapper = styled.div`
-position: relative;
-width: 100%;
-max-height: 200px;
-margin-bottom: 8px;
+    position: relative;
+    width: 100%;
+    max-height: 200px;
+    margin-bottom: 8px;
 `
 
 const Range = styled.div`
     transform-origin: left;
-height: 5px;
-background-color: ${s => s.theme.PrimaryColor};
+    height: 5px;
+    background-color: ${s => s.theme.PrimaryColor};
 `
 
 const FormField = styled.div`
-
-margin-bottom: 10px;
-  input,
-  textarea {
-    position: relative;
-    line-height: 2.25rem;
-    font-size: 1rem;
-    padding: 0 0.625rem;
-    border-radius:0;
-    border: none;
-    width: 100%;
-    transition: box-shadow 150ms ease;
-    color:blue;
-
-
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 0 3px #0827e1;
+    margin-bottom: 10px;
+    display: inline-block;
+    input,
+    textarea {
+        position: relative;
+        line-height: 2.25rem;
+        font-size: 1rem;
+        padding: 0 0.625rem;
+        border-radius:0;
+        border: none;
+        width: 100%;
+        transition: box-shadow 150ms ease;
+        color:blue;
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 0 3px #0827e1;
+      }
+    }
+    button {
+        display: inline-block;
+        width: auto;
+        background-color: #0827e1;
+        color: white; 
+        border: none;
+        padding: 0.5rem 1rem;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    }
+    textarea {
+        line-height: 1.5;
+        padding: 0.5rem 0.625rem;
+        resize: vertical;
     }
 
-
-  }
- button {
-       display: inline-block;
-    width: auto;
-    background-color: #0827e1;
-   
-	color: white; 
-	border: none;
-	padding: 0.5rem 1rem;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
- }
-  textarea {
-    line-height: 1.5;
-    padding: 0.5rem 0.625rem;
-    resize: vertical;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 0.25rem;
-  }
-
-  ${p =>
-    p.wide &&
-    css`
-      @media (min-width: ${props => props.theme.breakpoints.medium}) {
-        grid-column-start: 1;
-        grid-column-end: 3;
-      }
-    `};
+    label {
+        display: block;
+        margin-bottom: 0.25rem;
+    }
 `

@@ -27,7 +27,6 @@ export default withTheme(function Layout({children, data, path }) {
   }
     const pageData = data.allStrapiPage.edges[0].node;
     
-
     const navLinks = nav.allStrapiPage.edges;
     return (
       <VerticalPositioner>
@@ -64,7 +63,6 @@ export default withTheme(function Layout({children, data, path }) {
                     <h1>{pageData.Headline}</h1>
           <LeadingParagraph dangerouslySetInnerHTML={{ __html: pageData.Textline }} />
            
-
                 <Main style={{ columnCount: pageData.Columns }}>
                     {children}
                 </Main>
@@ -74,10 +72,11 @@ export default withTheme(function Layout({children, data, path }) {
 })
 
 export const Main = styled.main`
-    /* padding: 0 15px; */
-    /* margin: 0 -15px; */
     column-gap: 3%;
     column-width: 30%;
+    @media (max-width: 540px) {
+      column-count:2!important;
+    }
 `
 
 const StyledImg = styled(Img)`
@@ -89,6 +88,7 @@ const StyledImg = styled(Img)`
 const LeadingParagraph =  styled.div`
     margin-bottom: 1rem;
 `;
+
 const Reset = css`
   /*! minireset.css v0.0.5 | MIT License | github.com/jgthms/minireset.css */
   html,
@@ -117,7 +117,6 @@ const Reset = css`
     margin: 0;
     padding: 0;
   }
-
   h1,
   h2,
   h3,
@@ -127,57 +126,45 @@ const Reset = css`
     font-size: 100%;
     font-weight: normal;
   }
-
   body,html {
     height:100%
-
   }
   ul {
     list-style: none;
   }
-
   button,
   input,
   select,
   textarea {
     margin: 0;
     font-family: 'Inconsolata';
-  
   }
 a {
-
-    // letter-spacing: -1px;
-    text-decoration: none;
+  text-decoration: none;
   line-height: 1.65rem;
-    word-spacing: 1px;
-    // font-weight: 700;
+  word-spacing: 1px;
   color: black;
 }
   html {
     box-sizing: border-box;
   }
-
   *,
   *:before,
   *:after {
     box-sizing: inherit;
   }
-
   img,
   video {
     height: auto;
     max-width: 100%;
   }
-
   iframe {
     border: 0;
   }
-
   table {
     border-collapse: collapse;
     border-spacing: 0;
   }
-
   td,
   th {
     padding: 0;
@@ -185,8 +172,7 @@ a {
   }
 `
 const GlobalStyle = createGlobalStyle`
-
-${Reset}
+    ${Reset}
     * {box-sizing: border-box;}
     [hidden] {display: none !important}
     [disabled] {pointer-events:none; opacity: 0.3}
@@ -200,19 +186,19 @@ ${Reset}
         font-weight: bold;
         color: ${s => s.theme.PrimaryColor};
         }
-            h2 {
+    h2 {
         font-size: 1.5rem;
         margin-bottom: 0.8rem;
         font-weight: bold;
         color:#000;
-        }
+    }
     svg {
       margin-left: 3px;
         height: 1rem;
     }
     html {
 
-    
+
     font-family: monospace;
       font-family: 'Inconsolata';
       
@@ -223,48 +209,43 @@ ${Reset}
     --spacing-m: 36px;
     }
 
-      ul:not([class]) {
-    list-style-type: none;
-    li {
-      position:relative;
-              &.active a:before {
-          content: ">";
-          position: absolute;
-          right:100%;
-          font-weight: 700;
-          margin-right: 0.25rem;
+    ul:not([class]) {
+        list-style-type: none;
+        li {
+          position:relative;
+                  &.active a:before {
+              content: ">";
+              position: absolute;
+              right:100%;
+              font-weight: 700;
+              margin-right: 0.25rem;
+            }
+          a {
+                font-size: 1.65rem;
+                line-height: 2rem;
+
+          }
         }
-      a {
-           font-size: 1.65rem;
-           line-height: 2rem;
-
-      }
     }
-  }
     a {
-  color: ${s => s.theme.PrimaryColor};
-
-    // letter-spacing: -1px;
+    color: ${s => s.theme.PrimaryColor};
     text-decoration: none;
-  line-height: 1rem;
+    line-height: 1rem;
     word-spacing: 1px;
     font-weight: 700;
+    }
 
-}
-
-li a:hover,p a:hover,div>a:hover{
-
-   border-bottom: 2px solid #0827e1;
- 
-}
-p {
-  line-height: 1.4rem;
-  margin-bottom: 15px;
-      word-break: break-word;
-}
-header {
-  padding: 1rem 0;
-}
+    li a:hover,p a:hover,div>a:hover{
+    border-bottom: 2px solid #0827e1;
+    }
+    p {
+    line-height: 1.4rem;
+    margin-bottom: 15px;
+    word-break: break-word;
+    }
+    header {
+    padding: 1rem 0;
+    }
 `
 
 
