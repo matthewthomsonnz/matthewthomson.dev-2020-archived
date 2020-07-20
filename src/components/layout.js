@@ -26,12 +26,13 @@ export default withTheme(function Layout({children, data, path }) {
     )
   }
     const pageData = data.allStrapiPage.edges[0].node;
-    
+    var pageTitle = "";
     const navLinks = nav.allStrapiPage.edges;
     return (
       <VerticalPositioner>
         <Helmet>
             <link rel="preload" as="font" type="font/woff2" href="./fonts/Inconsolata.woff2" crossorigin/>
+          <title>Matthew Thomson - Web Developer - New Zealand</title>
           <style type="text/css">{`
     @font-face {
         font-family: 'Inconsolata';
