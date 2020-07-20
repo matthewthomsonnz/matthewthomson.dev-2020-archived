@@ -125,7 +125,8 @@ const StyledImg = styled(Img)`
 const FeatureItem = styled.div`
     position: relative;
     width: 100%;
-    margin: 1em 0 0em 0;
+    margin: -1em 0 0 0;
+    padding: 1em 0;
     overflow: visible;
     display: inline-block;
     > div {

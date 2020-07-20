@@ -26,7 +26,6 @@ export default withTheme(function Layout({children, data, path }) {
     )
   }
     const pageData = data.allStrapiPage.edges[0].node;
-    var pageTitle = "";
     const navLinks = nav.allStrapiPage.edges;
     return (
       <VerticalPositioner>
@@ -75,6 +74,8 @@ export default withTheme(function Layout({children, data, path }) {
 export const Main = styled.main`
     column-gap: 3%;
     column-width: 30%;
+  padding: 1em;
+    margin: 0 -15px;
     @media (max-width: 540px) {
       column-count:2!important;
     }
