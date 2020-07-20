@@ -77,7 +77,7 @@ export const Main = styled.main`
     break-inside: avoid;
   padding: 1em;
     margin: 0 -15px;
-    overflow: visible;
+    overflow: hidden;
     @media (max-width: 540px) {
       column-count:2!important;
     }
