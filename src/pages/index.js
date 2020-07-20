@@ -128,10 +128,14 @@ const FeatureItem = styled.div`
     margin: 1em 0 0em 0;
     overflow: visible;
     display: inline-block;
+    break-inside: avoid;
+    transform: translateZ(0);
     > div {
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
         border-radius: 10px;
         padding: calc(10px + 3%);
+        break-inside: avoid;
+        transform: translateZ(0);
     }
 `
 

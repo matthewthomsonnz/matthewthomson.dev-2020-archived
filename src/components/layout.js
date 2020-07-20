@@ -74,6 +74,7 @@ export default withTheme(function Layout({children, data, path }) {
 export const Main = styled.main`
     column-gap: 3%;
     column-width: 30%;
+    break-inside: avoid;
   padding: 1em;
     margin: 0 -15px;
     overflow: visible;
