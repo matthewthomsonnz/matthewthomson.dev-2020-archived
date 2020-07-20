@@ -76,6 +76,7 @@ export const Main = styled.main`
     column-width: 30%;
   padding: 1em;
     margin: 0 -15px;
+    overflow: visible;
     @media (max-width: 540px) {
       column-count:2!important;
     }
