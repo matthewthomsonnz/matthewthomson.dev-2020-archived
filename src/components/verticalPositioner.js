@@ -20,12 +20,21 @@ export default class VerticalPositioner extends React.Component {
     }
     componentDidMount(prevProps, prevState) {
         var scope = this
-        document.fonts.ready.then(function (fontFaceSetEvent) {
-            scope.setState({
-                transform: 'translateY(calc(' + window.innerHeight / 2 + 'px - ' + scope.myElement.clientHeight / 2 + 'px))',
-                opacity: 1
+        if (document.fonts) {
+            document.fonts.ready.then(function (fontFaceSetEvent) {
+                scope.setState({
+                    transform: 'translateY(calc(' + window.innerHeight / 2 + 'px - ' + scope.myElement.clientHeight / 2 + 'px))',
+                    opacity: 1
+                })
             })
-        })
+        } else {
+            setTimeout(function(){
+                scope.setState({
+                    transform: 'translateY(calc(' + window.innerHeight / 2 + 'px - ' + scope.myElement.clientHeight / 2 + 'px))',
+                    opacity: 1
+                })
+            },1000)
+        }
     }
     render() {
         return (

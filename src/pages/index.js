@@ -126,13 +126,14 @@ const FeatureItem = styled.div`
     position: relative;
     width: 100%;
     margin: -1em 0 0 0;
-    padding: 1em 0;
+    padding: 1.2rem 1rem;
     overflow: visible;
     display: inline-block;
     > div {
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
         border-radius: 10px;
         padding: calc(10px + 3%);
+        margin: 0 -1rem;
     }
 `
 
