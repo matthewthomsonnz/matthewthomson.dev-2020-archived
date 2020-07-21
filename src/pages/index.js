@@ -136,6 +136,7 @@ const FeatureItem = styled.div`
         padding: calc(10px + 3%);
         break-inside: avoid;
         transform: translateZ(0);
+        background: rgb(255,255,255,0.2);
     }
 `
 
