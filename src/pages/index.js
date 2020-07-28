@@ -92,7 +92,7 @@ query MyQuery($path: String!) {
           visitLink
           Image {
             childImageSharp {
-              fluid(maxWidth: 600, quality: 70) {
+              fluid(maxWidth: 400, quality: 75) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -108,7 +108,7 @@ query MyQuery($path: String!) {
     Description
     Image {
       childImageSharp {
-        fluid(maxWidth: 650, quality: 80) {
+        fluid(maxWidth: 300, quality: 90) {
           ...GatsbyImageSharpFluid
         }
       }
